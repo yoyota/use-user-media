@@ -1,4 +1,4 @@
-name: "React PoseNet npm publish"
+name: "npm publish"
 on:
   release:
     types:
