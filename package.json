@@ -1,6 +1,6 @@
 {
   "name": "use-user-media",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup --config",
@@ -16,8 +16,8 @@
   "license": "MIT",
   "keywords": [
     "react",
-    "tfjs",
-    "posenet"
+    "react-hooks",
+    "getusermedia"
   ],
   "bugs": {
     "url": "https://github.com/yoyota/use-user-media/issues"
