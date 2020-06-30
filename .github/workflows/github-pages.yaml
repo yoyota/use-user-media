@@ -1,0 +1,23 @@
+name: github pages
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm ci
+      - run: npm run docs:build
+      - run: echo "use-user-media.yoyota.dev" > ./dist-docs/CNAME
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist-docs
