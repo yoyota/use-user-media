@@ -1,16 +1,24 @@
 import to from "await-to-js"
 import { useState, useEffect } from "react"
 
-export default function useUserMedia() {
+export default function useUserMedia(
+  constraints = { audio: true, video: true },
+  disabled = false
+) {
   const [stream, setStream] = useState()
   const [error, setError] = useState()
 
-  useEffect((constraints = { audio: true, video: true }) => {
+  useEffect(() => {
+    if (disabled) {
+      return
+    }
+
     const userMediaError = checkUserMediaError()
     if (userMediaError) {
       setError(userMediaError)
       return
     }
+
     const constraintsString = JSON.stringify(constraints)
     async function setupCamera() {
       const [err, mediaStream] = await to(
@@ -23,7 +31,7 @@ export default function useUserMedia() {
       setStream(mediaStream)
     }
     setupCamera()
-  }, [])
+  }, [constraints, disabled])
 
   useEffect(() => {
     return () => {
