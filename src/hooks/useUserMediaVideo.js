@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import useUserMedia from "./useUserMedia"
 
 export default function useUserMediaVideo(
-  constraints = { audio: true, video: true }
+  constraints = { audio: true, video: true },
+  disabled = false
 ) {
   const [video, setVideo] = useState()
-  const [err, stream] = useUserMedia(constraints)
+  const [err, stream] = useUserMedia(constraints, disabled)
   useEffect(() => {
     if (!stream) {
       return
