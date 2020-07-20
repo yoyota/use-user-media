@@ -9,14 +9,24 @@ const input = "./src/index.js"
 export default [
   {
     input,
-    output: {
-      name: packageJSON.name,
-      file: packageJSON.main,
-      format: "es",
-      globals: {
-        react: "React"
+    output: [
+      {
+        name: packageJSON.name,
+        file: packageJSON.browser,
+        format: "umd",
+        globals: {
+          react: "React"
+        }
+      },
+      {
+        name: packageJSON.name,
+        file: packageJSON.module,
+        format: "esm",
+        globals: {
+          react: "React"
+        }
       }
-    },
+    ],
     external: ["react", "react-dom"],
     plugins: [
       resolve(),
