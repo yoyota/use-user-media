@@ -12,7 +12,7 @@ export default [
     output: {
       name: packageJSON.name,
       file: packageJSON.main,
-      format: "umd",
+      format: "es",
       globals: {
         react: "React"
       }

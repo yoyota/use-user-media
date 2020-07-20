@@ -1,5 +1,4 @@
 import "regenerator-runtime/runtime"
-import useUserMedia from "./hooks/useUserMedia"
-import useUserMediaVideo from "./hooks/useUserMediaVideo"
 
-export { useUserMedia, useUserMediaVideo }
+export { default as useUserMedia } from "./hooks/useUserMedia"
+export { default as useUserMediaVideo } from "./hooks/useUserMediaVideo"
