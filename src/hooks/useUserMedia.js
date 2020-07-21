@@ -1,5 +1,5 @@
 import to from "await-to-js"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect } from "react"
 
 export default function useUserMedia(
   constraints = { audio: true, video: true }
