@@ -14,7 +14,7 @@ npm install --save use-user-media
 import { useUserMedia } from "use-user-media"
 
 function UseUserMediaExample() {
-  const constraints = { video: true, audio: false }
+  const constraints = { video: true, audio: true }
   const [err, stream] = useUserMedia(constraints)
   if (err) {
     return <p>{err.toString()}</p>
@@ -49,7 +49,7 @@ import { useUserMediaVideo } from "use-user-media"
 const width = 600
 const height = 500
 function UseUserMediaVideoExample() {
-  const constraints = { video: true, audio: false }
+  const constraints = { video: true, audio: true }
   const [err, videoElement] = useUserMediaVideo(constraints)
   if (err) {
     return <p>{err.toString()}</p>

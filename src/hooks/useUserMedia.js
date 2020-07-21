@@ -1,15 +1,17 @@
 import to from "await-to-js"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 
 export default function useUserMedia(
-  constraints = { audio: true, video: true },
-  disabled = false
+  constraints = { audio: true, video: true }
 ) {
   const [stream, setStream] = useState()
   const [error, setError] = useState()
+  const constraintsString = JSON.stringify(constraints)
 
   useEffect(() => {
-    if (disabled) {
+    const constraintsObject = JSON.parse(constraintsString)
+    const { audio, video } = constraintsObject || {}
+    if (!video && !audio) {
       return
     }
 
@@ -19,10 +21,9 @@ export default function useUserMedia(
       return
     }
 
-    const constraintsString = JSON.stringify(constraints)
     async function setupCamera() {
       const [err, mediaStream] = await to(
-        navigator.mediaDevices.getUserMedia(JSON.parse(constraintsString))
+        navigator.mediaDevices.getUserMedia(constraintsObject)
       )
       if (err) {
         setError(err)
@@ -31,7 +32,7 @@ export default function useUserMedia(
       setStream(mediaStream)
     }
     setupCamera()
-  }, [constraints, disabled])
+  }, [constraintsString])
 
   useEffect(() => {
     return () => {
