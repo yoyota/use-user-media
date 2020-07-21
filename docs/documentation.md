@@ -26,6 +26,9 @@ function UseUserMediaExample() {
     // eslint-disable-next-line jsx-a11y/media-has-caption
     <video
       ref={v => {
+        if (!v) {
+          return
+        }
         v.srcObject = stream
       }}
       autoPlay
