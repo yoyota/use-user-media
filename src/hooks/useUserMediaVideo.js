@@ -12,6 +12,7 @@ export default function useUserMediaVideo(
     }
     const videoEl = document.createElement("video")
     videoEl.srcObject = stream
+    videoEl.playsInline = true
     videoEl.onloadedmetadata = () => {
       videoEl.play()
       setVideo(videoEl)
