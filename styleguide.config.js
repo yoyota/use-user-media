@@ -7,7 +7,19 @@ module.exports = {
     {
       name: "Documentation",
       content: "docs/documentation.md",
-      exampleMode: "expand"
+      sections: [
+        {
+          name: "useUserMedia",
+          content: "docs/useUserMedia.md",
+          exampleMode: "expand"
+        },
+        {
+          name: "useUserMediaVideo",
+          content: "docs/useUserMediaVideo.md",
+          exampleMode: "expand"
+        }
+      ],
+      sectionDepth: 1
     }
   ],
   webpackConfig: {
