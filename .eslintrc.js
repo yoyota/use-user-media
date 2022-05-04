@@ -1,15 +1,16 @@
 module.exports = {
   extends: [
     "airbnb",
-    "prettier/react",
+    "prettier",
     "plugin:jest/recommended",
     "plugin:promise/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:markdown/recommended",
   ],
   env: {
     es6: true,
     jest: true,
-    browser: true
+    browser: true,
   },
   plugins: ["jest", "promise", "prettier", "react", "react-hooks", "markdown"],
   rules: {
@@ -20,36 +21,38 @@ module.exports = {
     "no-unused-vars": [
       "error",
       {
-        varsIgnorePattern: "_"
-      }
+        varsIgnorePattern: "_",
+      },
     ],
     "prettier/prettier": [
       "error",
       {
-        semi: false
-      }
+        semi: false,
+      },
     ],
     "react/jsx-sort-props": "warn",
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
   },
-  overrides: [{
-    "files": ["*.md"],
-    "rules": {
-      "react/jsx-no-undef": "off",
-      "import/no-unresolved": "off",
-      "no-unused-expressions": "off",
-      "react/react-in-jsx-scope": "off"
-    }
-  }],
+  overrides: [
+    {
+      files: ["*.md"],
+      rules: {
+        "react/jsx-no-undef": "off",
+        "import/no-unresolved": "off",
+        "no-unused-expressions": "off",
+        "react/react-in-jsx-scope": "off",
+      },
+    },
+  ],
   settings: {
     "import/resolver": {
       node: {
-        moduleDirectory: ["node_modules", "src/"]
-      }
-    }
-  }
+        moduleDirectory: ["node_modules", "src/"],
+      },
+    },
+  },
 }

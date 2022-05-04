@@ -1,7 +1,7 @@
 const path = require("path")
 
 module.exports = {
-  title: "PoseNet React",
+  title: "use user media",
   pagePerSection: true,
   sections: [
     {
