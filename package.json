@@ -27,6 +27,7 @@
   "homepage": "https://github.com/yoyota/use-user-media#readme",
   "dependencies": {
     "await-to-js": "^3.0.0",
+    "prettier": "^2.6.2",
     "regenerator-runtime": "^0.13.9"
   },
   "peerDependencies": {
@@ -51,7 +52,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "jest": "^28.0.3",
-    "prettier": "^2.6.2",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

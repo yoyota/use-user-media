@@ -39,7 +39,7 @@ export default function useUserMedia(
       if (!stream) {
         return
       }
-      stream.getTracks().forEach(track => track.stop())
+      stream.getTracks().forEach((track) => track.stop())
     }
   }, [stream])
   return [error, stream]

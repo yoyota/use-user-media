@@ -7,5 +7,6 @@ npm install --save use-user-media
 ```
 
 ## Usage
+
 [useUserMedia](/#/useUserMedia)  
 [useUserMediaVideo](/#/useUserMediaVideo)
